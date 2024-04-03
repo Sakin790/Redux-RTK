@@ -1,12 +1,15 @@
+
+//State
 const initialCounterState = {
   count: 0,
 };
-
+//Action
 const incrementActions = () => {
   return {
     type: "INCREMENTAL",
   };
 };
+//Action
 const decrementActions = () => {
   return {
     type: "DECREMENTAL",
@@ -21,6 +24,7 @@ nije ekta function jei kina type return kore , sei type er kothai bolchilam
 
 const counterReducer = (state = initialCounterState, action) => {
   switch (action.type) {
+    /*kno ami action type likhlam , karon function type return kore */
     case INCREMENTAL:
       return {
         ...state, //Take all the values from the state
