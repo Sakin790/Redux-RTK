@@ -49,7 +49,7 @@ const counterReducer = (state = initialCounterState, action) => {
 const store = createStore(counterReducer);
 
 store.subscribe(() => {
-  store.getState();
+  console.log(store.getState());
 });
 
 store.dispatch(incrementActions());
