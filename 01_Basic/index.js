@@ -2,6 +2,7 @@ import { createStore } from "redux";
 
 const INCREMENTAL = "INCREMENTAL";
 const DECREMENTAL = "DECREMENTAL";
+const RESET = "RESET";
 //State
 const initialCounterState = {
   count: 0,
@@ -16,6 +17,11 @@ const incrementActions = () => {
 const decrementActions = () => {
   return {
     type: DECREMENTAL,
+  };
+};
+const resetActions = () => {
+  return {
+    type: RESET,
   };
 };
 
@@ -38,6 +44,11 @@ const counterReducer = (state = initialCounterState, action) => {
         ...state, //Take all the values from the state
         count: state.count - 1,
       };
+    case RESET:
+      return {
+        ...state, //Take all the values from the state
+        count:0
+      };
 
     default:
       return state;
@@ -52,4 +63,8 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
+store.dispatch(incrementActions()); 
 store.dispatch(incrementActions());
+store.dispatch(incrementActions());
+store.dispatch(decrementActions());
+store.dispatch(resetActions());
