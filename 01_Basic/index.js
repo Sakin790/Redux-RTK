@@ -63,4 +63,5 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-store.dispatch(IncrementByValue(10)); // Dispatching the action correctly
+store.dispatch(IncrementByValue(10)); 
+store.dispatch(IncrementByValue(10));
