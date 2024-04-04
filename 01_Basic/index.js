@@ -1,4 +1,7 @@
+import { createStore } from "redux";
 
+const INCREMENTAL = "INCREMENTAL";
+const DECREMENTAL = "DECREMENTAL";
 //State
 const initialCounterState = {
   count: 0,
@@ -6,13 +9,13 @@ const initialCounterState = {
 //Action
 const incrementActions = () => {
   return {
-    type: "INCREMENTAL",
+    type: INCREMENTAL,
   };
 };
 //Action
 const decrementActions = () => {
   return {
-    type: "DECREMENTAL",
+    type: DECREMENTAL,
   };
 };
 
@@ -40,3 +43,13 @@ const counterReducer = (state = initialCounterState, action) => {
       return state;
   }
 };
+
+//store => getStore(), dispatch() , subscribe()
+
+const store = createStore(counterReducer);
+
+store.subscribe(() => {
+  store.getState();
+});
+
+store.dispatch(incrementActions());
