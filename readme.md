@@ -1,1 +1,0 @@
-Redux and RTK Project authors 
