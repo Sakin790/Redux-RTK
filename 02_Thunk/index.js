@@ -19,7 +19,7 @@ const getTodoRequest = () => {
 };
 const getTodoSuccess = (todo) => {
   return {
-    type: SUCCESSa
+    type: SUCCESS,
     payload: todo,
   };
 };
