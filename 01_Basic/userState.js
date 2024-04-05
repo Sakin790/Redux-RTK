@@ -34,9 +34,8 @@ const Reducer = (state = initialState, action) => {
 
 const store = createStore(Reducer);
 
-
 store.subscribe(() => {
-    console.log(store.getState());
-  });
+  console.log(store.getState());
+});
 
-  store.dispatch(addUserAction("mahid"))
+store.dispatch(addUserAction("mahid"));
