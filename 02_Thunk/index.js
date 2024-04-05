@@ -1,3 +1,5 @@
+//https://jsonplaceholder.typicode.com/todos
+
 const REQUEST = "REQUEST";
 const SUCCESS = "SUCCESS";
 const FAILED = "FAILED";
@@ -10,7 +12,6 @@ const initailTodoState = {
 };
 
 //Action
-
 const getTodoRequest = () => {
   return {
     type: REQUEST,
@@ -18,7 +19,7 @@ const getTodoRequest = () => {
 };
 const getTodoSuccess = (todo) => {
   return {
-    type: SUCCESS,
+    type: SUCCESSa
     payload: todo,
   };
 };
@@ -30,9 +31,8 @@ const getTodoError = (error) => {
 };
 
 //Reducer Create
-
-const todoReducer = (state = initailTodoState, Action) => {
-  switch (Action.type) {
+const todoReducer = (state = initailTodoState, action) => {
+  switch (action.type) {
     case REQUEST:
       return {
         ...state,
@@ -43,10 +43,10 @@ const todoReducer = (state = initailTodoState, Action) => {
       return {
         ...state,
         isLoading: false,
-        todos: Action.payload,
+        todos: action.payload,
       };
     case Error:
-      return {};
+      return;
 
     default:
       return state;
