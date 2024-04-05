@@ -1,8 +1,10 @@
 
 
 import { REQUEST, SUCCESS, ERROR } from "../constants/todoContant.js";
+
+
 import axios from "axios";
-export const getAllTodoa = () => async (dispatch) => {
+export const getAllTodo = () => async (dispatch) => {
   dispatch({
     type: REQUEST,
   });
