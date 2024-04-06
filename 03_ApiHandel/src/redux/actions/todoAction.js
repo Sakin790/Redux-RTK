@@ -1,10 +1,7 @@
-
-
 import { REQUEST, SUCCESS, ERROR } from "../constants/todoContant.js";
 
-
 import axios from "axios";
-export const getAllTodo = () => async (dispatch) => {
+const getAllTodo = () => async (dispatch) => {
   dispatch({
     type: REQUEST,
   });
@@ -12,6 +9,8 @@ export const getAllTodo = () => async (dispatch) => {
     const res = await axios.get("https://jsonplaceholder.typicode.com/todos");
     dispatch({ type: SUCCESS, payload: res.data });
   } catch (error) {
-    dispatch({ type: ERROR, payload: ERROR.message });
+    dispatch({ type: ERROR, payload: error.message });
   }
 };
+
+export default getAllTodo;
